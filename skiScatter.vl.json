@@ -1,0 +1,170 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+        "text" :"Montana Ski Areas",
+        "anchor": "middle", 
+        "color": "#ebe6e3", 
+        "offset": 10,
+        "dx": -60
+
+    },
+    "background": "#6F8285",
+
+    "params": [
+        {
+            "name": "pts",
+            "select": {"type": "point", "toggle": false}
+        }
+    ],
+    "vconcat": [
+        {
+            "width": 350,
+            "height": 250,
+            "data": {"url": "skiData2.json"},
+            "mark": {"type":"point", "filled": true, "clip": true},
+            "encoding": {
+                "size": {"value": 120},
+                "x": {
+                    "field": "Acres",
+                    "type": "quantitative", 
+                    "title": "Skiable Acres", 
+                    "scale": {"domain": [0,7000]},
+                    "axis": { 
+                        "format": "s", "domain": false, 
+                        "gridOpacity": 0.5,
+                        "titleColor": "#ebe6e3",
+                        "labelColor": "#ebe6e3", 
+                        "ticks": false , 
+                        "labelPadding": 4
+                    }
+                },
+                "y": {
+                    "field": "Price",
+                    "type": "quantitative", 
+                    "title": "Average Price of Lift Ticket (USD)",
+                    "scale": {"domain": [0,250]},
+                    "axis": {
+                        "domain": false, 
+                        "gridOpacity": 0.5,
+                        "labelColor": "#ebe6e3",
+                        "titleColor": "#ebe6e3", 
+                        "ticks": false , 
+                        "labelPadding": 4
+                    }
+                },
+                "tooltip": [
+                    {"field": "Name"},
+                    {"field": "Price"},
+                    {"field": "Acres"},
+                    {"field": "Snowfall"}
+                ],
+                "stroke":{
+                    "field": "Snowfall",
+                    "type": "quantitative",
+                    "scale": {
+                        "type": "quantize",
+                        "domain": [0, 400],
+                        "range": ["#071724", "#17709c","#87a5c1", "#d6dae6"]
+                    }, 
+                    "legend": {
+                        "type": "gradient",
+                        "direction": "horizontal", 
+                        "title": "Average Annual Snowfall (in)",
+                        "labelColor": "#ebe6e3",
+                        "titleColor": "#ebe6e3"
+                    }
+                },
+                "fill": {
+                    "field": "Snowfall",
+                    "type": "quantitative",
+                    "scale": {
+                        "type": "quantize",
+                        "domain": [0, 400],
+                        "range": ["#071724", "#17709c","#87a5c1", "#d6dae6"]
+                    }, 
+                    "legend": null
+                },
+                "fillOpacity": {
+                    "condition": {"param": "pts", "value": 1},
+                    "value": 0.2
+                },
+                "strokeOpacity": {
+                    "condition": {"param": "pts", "value": 1},
+                    "value": 0.5
+                },
+                "shape": {
+                    "field": "Difficulty",
+                    "type": "quantitative",
+                    "scale": {
+                        "type":"quantize",
+                        "domain": [2, 2.7],
+                        "range": ["circle", "square", "diamond"]
+                    }, 
+                    "legend": {
+                        "direction": "vertical", 
+                        "labelExpr": "datum.value <2.23? 'Easy': (datum.value <2.3? 'Intermediate':'Advanced')",
+                        "symbolFillColor": "#d6dae6",
+                        "symbolStrokeColor": "#d6dae6",
+                        "title": "Mountain Difficulty",
+                        "labelColor": "#ebe6e3",
+                        "titleColor": "#ebe6e3"
+                    }
+                }
+            }
+        },
+        {
+            "width": 350,
+            "height": 100,
+            "data": {"url": "skiData2.json"},
+            "transform": [{"filter": {"param": "pts"}},{"flatten": ["P", "Level"]}],
+            "encoding": {
+                "x": {
+                    "field": "P",
+                    "type": "quantitative", 
+                    "title": "Proportion of Mountain",
+                    "scale": {"domain": [0,60]},
+                    "axis": {
+                        "domain": false, 
+                        "gridOpacity": 0.5,
+                        "labelColor": "#ebe6e3",
+                        "titleColor": "#ebe6e3", 
+                        "ticks": false , 
+                        "labelPadding": 4
+                    }
+                },
+                "y": {
+                    "field": "Level",
+                    "type": "nominal", 
+                    "sort": ["Beginner","Intermediate", "Advanced", "Expert", "Extreme"], 
+                    "title": "Run Difficulty",
+                    "axis": {
+                        "domain": false, 
+                        "labelColor": "#ebe6e3",
+                        "titleColor": "#ebe6e3", 
+                        "ticks": false, 
+                        "labelPadding": 4
+                    }
+                },
+                "tooltip": [
+                    {"field": "P", "type": "quantitative", "title": "%"}
+                ],
+                "fill": {
+                    "field": "Level",
+                    "type": "nominal",
+                    "scale": {
+                        "domain": ["Beginner","Intermediate", "Advanced", "Expert", "Extreme"],
+                        "range": ["#569463", "#17709c", "#363636", "#363636", "#363636"]
+                    }, 
+                    "legend": null
+                }, 
+                "stroke": {"value": "#ebe6e3"}, 
+                "strokeOpacity":  {"value": 0.5}, 
+                "fillOpacity": {"value": 0.9}
+
+            },
+            "layer": [{
+                "mark": {"type":"bar",  "clip": true}}
+            ]
+        }
+    ]
+}
