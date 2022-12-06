@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+	<link rel="stylesheet" href="highDim.css">
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.22.1"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vega-lite@5.6.0"></script>
+  	<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.21.0"></script>
+</head>
+
+<body>
+	<div style="background-color: #ebe6e3; color: #6F8285; padding-left: 10px; 
+                padding-top: 1px; padding-bottom: 1px; font-size: larger">
+		<p><span style="font-size:125%;"><b>Hypothesis: </b> </span>
+            The difficulty level of the mountain and the annual snowfall amount contribute to the price of Montana ski area ticket prices.</p>
+	</div>
+	<div style = "padding-top: 25px; padding-bottom: 10px; color: #ebe6e3; font-size: larger">
+		<b></b></div>
+    <div class="grid-container">
+		<div class="grid-child first", id="scatter"></div>
+	</div>
+	<div style="color: #ebe6e3; padding-top: 50px; 
+				padding-left: 10px; text-align: left; 
+				font-size: smaller; opacity: 0.75;">
+
+        <span style="font-size:110%;"> <b>SOURCES:</b></span> <br>
+		<span style="font-size:85%;"><i> Big Sky Montana, </i> <a href="https://bigskyresort.com/">https://bigskyresort.com/</a> Accessed 2 Dec 2022.</span> <br>
+		<span style="font-size:85%;"><i> Blacktail Mountain Ski Area, </i> <a href="https://blacktailmountain.com/">https://blacktailmountain.com/</a> Accessed 5 Dec 2022.</span> <br>
+		<span style="font-size:85%;"><i> Bridger Bowl, </i> <a href="https://bridgerbowl.com/">https://bridgerbowl.com/</a> Accessed 2 Dec 2022.</span> <br>
+		<span style="font-size:85%;"><i> Ski Discovery, </i> <a href="https://www.skidiscovery.com/">https://www.skidiscovery.com/</a> Accessed 2 Dec 2022.</span> <br>
+		<span style="font-size:85%;"><i> Great Divide Montana, </i> <a href="https://skigd.com/">https://skigd.com/</a> Accessed 2 Dec 2022.</span> <br>
+		<span style="font-size:85%;"><i> Lookout Pass, </i> <a href="https://skilookout.com/">https://skilookout.com/</a> Accessed 2 Dec 2022.</span> <br>
+		<span style="font-size:85%;"><i> Lost Trail Ski Area, </i> <a href="https://losttrail.com/">https://losttrail.com/</a> Accessed 2 Dec 2022.</span> <br>
+		<span style="font-size:85%;"><i> Maverick Mountain, </i> <a href="https://skimaverick.com/">https://skimaverick.com/</a> Accessed 2 Dec 2022.</span> <br>
+		<span style="font-size:85%;"><i> MSB, </i> <a href="https://www.montanasnowbowl.com/">https://www.montanasnowbowl.com/</a> Accessed 2 Dec 2022.</span> <br>
+		<span style="font-size:85%;"><i> Red Lodge Mountain, </i> <a href="https://www.redlodgemountain.com/">https://www.redlodgemountain.com/</a> Accessed 2 Dec 2022.</span> <br>
+		<span style="font-size:85%;"><i> Showdown Montana, </i> <a href="https://www.showdownmontana.com/">https://www.showdownmontana.com/</a> Accessed 2 Dec 2022.</span> <br>
+		<span style="font-size:85%;"><i> Teton Pass Ski Resort, </i> <a href="https://www.skitetonmt.com/">https://www.skitetonmt.com/</a> Accessed 2 Dec 2022.</span> <br>
+		<span style="font-size:85%;"><i> Ski Whitefish, </i> <a href="https://skiwhitefish.com/">https://skiwhitefish.com/</a> Accessed 2 Dec 2022.</span> <br>
+		<span style="font-size:85%;"> "Montana Snow Report", <i> On the Snow, </i> <a href="https://www.onthesnow.com/montana/skireport">https://www.onthesnow.com/montana/skireport</a> Accessed 2 Dec 2022.</span> <br>
+
+    </div>
+	<script>
+    	vegaEmbed('#scatter', 'skiScatter.vl.json')
+			.then(result => console.log(result))
+      		.catch(console.warn);
+	</script>
+</body>
+ 
