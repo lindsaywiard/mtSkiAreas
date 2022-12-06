@@ -1,0 +1,142 @@
+[
+  {
+    "Name": "",
+    "id": "",
+    "Acres": -100,
+    "Snowfall": 0,
+    "Price": -100,
+    "Difficulty": 0,
+    "P": [100, 100, 100, 100, 100],
+    "Level": ["Beginner","Intermediate", "Advanced", "Expert", "Extreme"]
+  },
+  {
+   "Name": "Maverick Mountain",
+   "id": "m",
+   "Acres": 350,
+   "Snowfall": 86,
+   "Price": 45,
+   "Difficulty": 2.24,
+   "P": [29,38,14,19,0],
+   "Level": ["Beginner","Intermediate", "Advanced", "Expert", "Extreme"]
+ },
+ {
+   "Name": "Big Sky",
+   "id": "bs",
+   "Acres": 5850,
+   "Snowfall": 323,
+   "Price": 200,
+   "Difficulty": 2.52,
+   "P": [23,25,34,13,5],
+   "Level": ["Beginner","Intermediate", "Advanced", "Expert", "Extreme"]
+ },
+ {
+   "Name": "Blacktail Mountain",
+   "id": "bt",
+   "Acres": 1000,
+   "Snowfall": 250,
+   "Price": 55,
+   "Difficulty": 2.07,
+   "P": [28,38,34,0,0],
+   "Level": ["Beginner","Intermediate", "Advanced", "Expert", "Extreme"]
+ },
+ {
+   "Name": "Bridger Bowl",
+   "id": "bb",
+   "Acres": 2000,
+   "Snowfall": 222,
+   "Price": 70,
+   "Difficulty": 2.2,
+   "P": [19,49,25,7,0],
+   "Level": ["Beginner","Intermediate", "Advanced", "Expert", "Extreme"]
+ },
+ {
+   "Name": "Discovery Mountain",
+   "id": "d",
+   "Acres": 2200,
+   "Snowfall": 215,
+   "Price": 70,
+   "Difficulty": 2.65,
+   "P": [20,25,25,30,0],
+   "Level": ["Beginner","Intermediate", "Advanced", "Expert", "Extreme"]
+ },
+ {
+   "Name": "Great Divide",
+   "id": "gd",
+   "Acres": 1500,
+   "Snowfall": 150,
+   "Price": 64,
+   "Difficulty": 2.55,
+   "P": [5,49,31,15,0],
+   "Level": ["Beginner","Intermediate", "Advanced", "Expert", "Extreme"]
+ },
+ {
+   "Name": "Lookout Pass",
+   "id": "lo",
+   "Acres": 560,
+   "Snowfall": 381,
+   "Price": 66,
+   "Difficulty": 2.2,
+   "P": [20,50,20,10,0],
+   "Level": ["Beginner","Intermediate", "Advanced", "Expert", "Extreme"]
+ },
+ {
+   "Name": "Lost Trail",
+   "id": "lt",
+   "Acres": 1800,
+   "Snowfall": 325,
+   "Price": 58,
+   "Difficulty": 2.52,
+   "P": [17,39,19,25,0],
+   "Level": ["Beginner","Intermediate", "Advanced", "Expert", "Extreme"]
+ },
+ {
+   "Name": "Montana Snowbowl",
+   "id": "sb",
+   "Acres": 950,
+   "Snowfall": 139,
+   "Price": 68,
+   "Difficulty": 2.21,
+   "P": [25,32,41,2,0],
+   "Level": ["Beginner","Intermediate", "Advanced", "Expert", "Extreme"]
+ },
+ {
+   "Name": "Red Lodge Mountain",
+   "id": "rl",
+   "Acres": 1635,
+   "Snowfall": 250,
+   "Price": 75,
+   "Difficulty": 2.56,
+   "P": [17,29,36,18,0],
+   "Level": ["Beginner","Intermediate", "Advanced", "Expert", "Extreme"]
+ },
+ {
+   "Name": "Showdown Montana",
+   "id": "sd",
+   "Acres": 640,
+   "Snowfall": 280,
+   "Price": 60,
+   "Difficulty": 2.09,
+   "P": [27,38,35,0,0],
+   "Level": ["Beginner","Intermediate", "Advanced", "Expert", "Extreme"]
+ },
+ {
+   "Name": "Teton Pass",
+   "id": "tp",
+   "Acres": 400,
+   "Snowfall": 300,
+   "Price": 50,
+   "Difficulty": 2.42,
+   "P": [8,42,50,0,0],
+   "Level": ["Beginner","Intermediate", "Advanced", "Expert", "Extreme"]
+ },
+ {
+   "Name": "Whitefish Mountain",
+   "id": "wf",
+   "Acres": 3000,
+   "Snowfall": 320,
+   "Price": 94,
+   "Difficulty": 2.46,
+   "P": [12,37,44,7,0],
+   "Level": ["Beginner","Intermediate", "Advanced", "Expert", "Extreme"]
+ }
+]

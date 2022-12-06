@@ -1,0 +1,147 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "",
+    "background": "#f5f3f1",
+    "params": [
+        {
+            "name": "pts",
+            "select": {"type": "point", "toggle": false}
+        }
+    ],
+    "vconcat": [
+        {
+            "data": {"url": "skiData2.csv"},
+            "mark": {"type":"point", "filled": true},
+            "encoding": {
+                "size": {"value": 150},
+                "x": {
+                    "field": "Acres",
+                    "type": "quantitative", 
+                    "title": "Skiable Acres", 
+                    "axis": { 
+                        "format": "s", "domain": false, 
+                        "titleColor": "#4d4d4d",
+                        "labelColor": "#4d4d4d", 
+                        "ticks": false , 
+                        "labelPadding": 4
+                    }
+                },
+                "y": {
+                    "field": "Price",
+                    "type": "quantitative", 
+                    "title": "Average Price of Lift Ticket (USD)",
+                    "axis": {
+                        "domain": false, 
+                        "labelColor": "#4d4d4d",
+                        "titleColor": "#4d4d4d", 
+                        "ticks": false , 
+                        "labelPadding": 4
+                    }
+                },
+                "tooltip": [
+                    {"field": "Name"},
+                    {"field": "Price"},
+                    {"field": "Acres"},
+                    {"field": "Snowfall"}
+                ],
+                "stroke":{
+                    "field": "Snowfall",
+                    "type": "quantitative",
+                    "scale": {
+                        "type": "quantize",
+                        "domain": [0, 400],
+                        "reverse":true,
+                        "scheme": {"name":"viridis", "count": 4}
+                    }, 
+                    "legend": {
+                        "direction": "horizontal", 
+                        "title": "Average Annual Snowfall (in)"
+                    }
+                },
+                "fill": {
+                    "field": "Snowfall",
+                    "type": "quantitative",
+                    "scale": {
+                        "type": "quantize",
+                        "domain": [0, 400],
+                        "reverse":true,
+                        "scheme": {"name":"viridis", "count": 4}
+                    }, 
+                    "legend": {
+                        "type": "gradient",
+                        "direction": "horizontal", 
+                        "title": "Average Annual Snowfall (in)",
+                        "titleColor": "#4d4d4d"
+                    }
+                },
+                "fillOpacity": {
+                    "condition": {"param": "pts", "value": 0.8},
+                    "value": 0.1
+                },
+                "strokeOpacity": {
+                    "condition": {"param": "pts", "value": 1},
+                    "value": 0.3
+                },
+                "shape": {
+                    "field": "Difficulty",
+                    "type": "quantitative",
+                    "scale": {
+                        "type":"quantize",
+                        "domain": [2, 2.7],
+                        "range": ["circle", "square", "diamond"]
+                    }, 
+                    "legend": {
+                        "direction": "vertical", 
+                        "labelExpr": "datum.value <2.23? 'Easy': (datum.value <2.3? 'Intermediate':'Advanced')",
+                        "title": "Mountain Difficulty",
+                        "titleColor": "#4d4d4d"
+                    }
+                }
+            }
+        },
+        {
+            "data": {"url": "skiData.json"},
+            "mark": {"type":"bar", "opacity": 0.8},
+            "encoding": {
+                "column":{"field": "Name"},
+                "x": {
+                    "field": "P",
+                    "type": "quantitative", 
+                    "title": "Proportion of Mountain",
+                    "axis": {
+                        "domain": false, 
+                        "labelColor": "#4d4d4d",
+                        "titleColor": "#4d4d4d", 
+                        "ticks": false , 
+                        "labelPadding": 4
+                    }
+                },
+                "y": {
+                    "field": "level",
+                    "type": "nominal", 
+                    "sort": ["Beginner","Intermediate", "Advanced", "Expert", "Extreme"], 
+                    "title": "Run Difficulty",
+                    "axis": {
+                        "domain": false, 
+                        "labelColor": "#4d4d4d",
+                        "titleColor": "#4d4d4d", 
+                        "ticks": false, 
+                        "labelPadding": 4
+                    }
+                },
+                "tooltip": [
+                    {"field": "P"}
+                ],
+                "color": {
+                    "field": "level",
+                    "type": "nominal",
+                    "scale": {
+                        "domain": ["Beginner","Intermediate", "Advanced", "Expert", "Extreme"],
+                        "range": ["#487D2D", "#2F5CA3", "#363636", "#363636", "#363636"]
+                    }, 
+                    "legend": null
+                }
+            }
+        }
+    ]
+}
