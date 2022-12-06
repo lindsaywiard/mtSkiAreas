@@ -5,10 +5,12 @@
         "anchor": "middle", 
         "color": "#ebe6e3", 
         "offset": 10,
-        "dx": -60
+        "dx": -90, 
+        "fontSize": 16
 
     },
     "background": "#6F8285",
+    "center": true,
 
     "params": [
         {
@@ -18,7 +20,7 @@
     ],
     "vconcat": [
         {
-            "width": 350,
+            "width": 500,
             "height": 250,
             "data": {"url": "skiData2.json"},
             "mark": {"type":"point", "filled": true, "clip": true},
@@ -28,14 +30,14 @@
                     "field": "Acres",
                     "type": "quantitative", 
                     "title": "Skiable Acres", 
-                    "scale": {"domain": [0,7000]},
+                    "scale": {"domain": [0,6000]},
                     "axis": { 
                         "format": "s", "domain": false, 
                         "gridOpacity": 0.5,
                         "titleColor": "#ebe6e3",
                         "labelColor": "#ebe6e3", 
                         "ticks": false , 
-                        "labelPadding": 4
+                        "labelPadding": 4, "tickMinStep": 1000
                     }
                 },
                 "y": {
@@ -136,13 +138,16 @@
                     "field": "Level",
                     "type": "nominal", 
                     "sort": ["Beginner","Intermediate", "Advanced", "Expert", "Extreme"], 
-                    "title": "Run Difficulty",
+                   
                     "axis": {
+                        "title": "Run Difficulty",
+                        "titleAngle": -90,
                         "domain": false, 
                         "labelColor": "#ebe6e3",
                         "titleColor": "#ebe6e3", 
                         "ticks": false, 
-                        "labelPadding": 4
+                        "labelPadding": 4,
+                        "orient": "left"
                     }
                 },
                 "tooltip": [
